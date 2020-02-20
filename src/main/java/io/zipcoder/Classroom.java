@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.logging.Logger;
 
 public class Classroom {
 
@@ -80,7 +81,18 @@ public class Classroom {
 
     public Map<Student, Character> getLetterGrade() {
         Map<Student, Character> toRet = new HashMap<>();
+        // Highest avg
+        // Highest avg * (1-0.1)                                    = 10% mark
+        // [Highest avg * (1-0.11)] -range- [Highest avg * (1-0.29)] = 11-29% mark
+        // [Highest avg * (1-0.30)] -range- [Highest avg * (1-0.50)] = 30-50% mark
+        // [Highest avg * (1-0.51)] -range- [Highest avg * (1-0.89)] = 51-89% mark
+        // [Highest avg * (1-0.9)] -range- [0]                       = 90-100% mark
 
+
+        int highestAvg = -1;
+        for (Map.Entry<Student, Double> i : this.treeHouse.entrySet()) {
+            Logger.getGlobal().info("Printing entry from treehouse: " + i.getKey() + ", " + i.getValue());
+        }
         return toRet;
     }
 
