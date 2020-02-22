@@ -60,11 +60,17 @@ public class Classroom {
     }
 
     public void removeStudent(String firstName, String lastName) {
+        ArrayList<Student> toRemove = new ArrayList<>();
         for (Student s : this.students) {
             if (s.getFirstName().equals(firstName) && s.getLastName().equals(lastName)) {
-                this.students.remove(new Student(firstName, lastName));
+                toRemove.add(new Student(firstName, lastName));
             }
         }
+
+        for (Student s : toRemove) {
+            this.students.remove(s);
+        }
+
         updateTreehouse();
     }
 

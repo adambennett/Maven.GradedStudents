@@ -98,7 +98,7 @@ public class Student implements Comparable<Student> {
     public String toString() {
         String name = this.firstName + " " + this.lastName + "\n> Average Score: " + getAverageExamScore() + "\n> Exam Scores: \n" + getExamScores();
         if (this.currentClass != null) {
-           name = this.firstName + " " + this.lastName + "\n>Current Grade: " + getCurrentLetterGrade() + "\n> Average Score: " + getAverageExamScore() + "\n> Exam Scores: \n" + getExamScores();
+           name = this.firstName + " " + this.lastName + "\n> Current Grade: " + getCurrentLetterGrade() + "\n> Average Score: " + getAverageExamScore() + "\n> Exam Scores: \n" + getExamScores();
         }
         return name;
     }
